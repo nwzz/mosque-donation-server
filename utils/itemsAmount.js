@@ -3,9 +3,13 @@ const zakat_al_fitr = "Zakat Al Fitr";
 const biriyani_fund = "Biriyani Fund";
 const madrasha_donation = "Madrasha Donation";
 const zakat_al_maal = "Zakat Al Maal";
+const ramadan_iftar_funding = "Ramadan Iftar Funding";
 const massey_iftar_donation = "Massey Iftar Donation";
 const our_masjid_iftar_program = "Our Masjid Iftar Program";
-const toush_tap_go = "Touch Tap Go";
+const food_fund = "Food Fund";
+const masjid_renovation = "Masjid Renovation";
+const qadr_fund = "Qadr Fund";
+const touch_tap_go = "Touch Tap Go";
 
 const itemsAmount = (arr) => {
   let mosjidDonation = 0,
@@ -18,10 +22,18 @@ const itemsAmount = (arr) => {
     madrashaDonationCount = 0,
     zakatAlMaal = 0,
     zakatAlMaalCount = 0,
+    ramadanIftarFunding = 0,
+    ramadanIftarFundingCount = 0,
     masseyIftarDonation = 0,
     masseyIftarDonationCount = 0,
     ourMasjidIftarProgram = 0,
     ourMasjidIftarProgramCount = 0,
+    foodFund = 0,
+    foodFundCount = 0,
+    masjidRenovation = 0,
+    masjidRenovationCount = 0,
+    qadrFund = 0,
+    qadrFundCount = 0,
     touchTapGo = 0,
     touchTapGoCount = 0;
 
@@ -43,16 +55,30 @@ const itemsAmount = (arr) => {
         zakatAlMaalCount++;
         zakatAlMaal += item.price;
       } else if (
+        item.name.toLowerCase() === ramadan_iftar_funding.toLowerCase()
+      ) {
+        ramadanIftarFundingCount++;
+        ramadanIftarFunding += item.price;
+      } else if (
         item.name.toLowerCase() === massey_iftar_donation.toLowerCase()
       ) {
-        masseyIftarDonationCount++;
-        masseyIftarDonation += item.price;
+        ramadanIftarFundingCount++;
+        ramadanIftarFunding += item.price;
       } else if (
         item.name.toLowerCase() === our_masjid_iftar_program.toLowerCase()
       ) {
         ourMasjidIftarProgramCount++;
         ourMasjidIftarProgram += item.price;
-      } else if (item.name.toLowerCase() === toush_tap_go.toLowerCase()) {
+      } else if (item.name.toLowerCase() === food_fund.toLowerCase()) {
+        foodFundCount++;
+        foodFund += item.price;
+      } else if (item.name.toLowerCase() === masjid_renovation.toLowerCase()) {
+        masjidRenovationCount++;
+        masjidRenovation += item.price;
+      } else if (item.name.toLowerCase() === qadr_fund.toLowerCase()) {
+        qadrFundCount++;
+        qadrFund += item.price;
+      } else if (item.name.toLowerCase() === touch_tap_go.toLowerCase()) {
         touchTapGoCount++;
         touchTapGo += item.price;
       }
@@ -88,6 +114,12 @@ const itemsAmount = (arr) => {
     },
 
     {
+      name: "Funding Iftar Funding",
+      amount: ramadanIftarFunding,
+      transactionNo: ramadanIftarFundingCount,
+    },
+
+    {
       name: "Massey Iftar Donation",
       amount: masseyIftarDonation,
       transactionNo: masseyIftarDonationCount,
@@ -97,6 +129,24 @@ const itemsAmount = (arr) => {
       name: "Our Masjid Iftar Program",
       amount: ourMasjidIftarProgram,
       transactionNo: ourMasjidIftarProgramCount,
+    },
+
+    {
+      name: "Food Fund",
+      amount: foodFund,
+      transactionNo: foodFundCount,
+    },
+
+    {
+      name: "Masjid Renovation",
+      amount: masjidRenovation,
+      transactionNo: masjidRenovationCount,
+    },
+
+    {
+      name: "Qadr Fund",
+      amount: qadrFund,
+      transactionNo: qadrFundCount,
     },
 
     {
