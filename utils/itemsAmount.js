@@ -83,7 +83,7 @@ const itemsAmount = (arr) => {
         qadrFund += item.price;
       } else if (item.name.toLowerCase() === dawah_donation.toLowerCase()) {
         dawahDonationCount++;
-        qadrFund += item.price;
+        dawahDonation += item.price;
       } else if (item.name.toLowerCase() === touch_tap_go.toLowerCase()) {
         touchTapGoCount++;
         touchTapGo += item.price;
