@@ -1,4 +1,5 @@
 const mosjid_donation = "Masjid Donation";
+const general_masjid_donation = "General Masjid Donation";
 const zakat_al_fitr = "Zakat Al Fitr";
 const biriyani_fund = "Biriyani Fund";
 const madrasha_donation = "Madrasha Donation";
@@ -15,6 +16,8 @@ const touch_tap_go = "Touch Tap Go";
 const itemsAmount = (arr) => {
   let mosjidDonation = 0,
     mosjidDonationCount = 0,
+    generalMasjidDonation = 0,
+    generalMasjidDonationCount = 0,
     zakatAlFitr = 0,
     zakatAlFitrCount = 0,
     biriyaniFund = 0,
@@ -45,6 +48,11 @@ const itemsAmount = (arr) => {
       if (item.name.toLowerCase() === mosjid_donation.toLowerCase()) {
         mosjidDonationCount++;
         mosjidDonation += item.price;
+      } else if (
+        item.name.toLowerCase() === general_masjid_donation.toLowerCase()
+      ) {
+        generalMasjidDonationCount++;
+        generalMasjidDonation += item.price;
       } else if (item.name.toLowerCase() === zakat_al_fitr.toLowerCase()) {
         zakatAlFitrCount++;
         zakatAlFitr += item.price;
@@ -96,6 +104,11 @@ const itemsAmount = (arr) => {
       name: "Masjid Donation",
       amount: mosjidDonation,
       transactionNo: mosjidDonationCount,
+    },
+    {
+      name: "General Masjid Donation",
+      amount: generalMasjidDonation,
+      transactionNo: generalMasjidDonationCount,
     },
     {
       name: "Zakat Al Fitr",
