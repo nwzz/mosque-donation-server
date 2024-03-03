@@ -1,6 +1,7 @@
 import PDFDocument from "pdfkit";
 import fs from "fs";
 import moment from "moment";
+import moment from "moment-timezone";
 import {
   generateHeader,
   customerInformation,
@@ -23,8 +24,9 @@ const paymentPDF = (payment, totalPayment, header) => {
   } = header;
 
   const receiptId = receiptID(totalPayment);
-  const pdfDate = moment(date).format("Do MMM YYYY");
-  const pdfTime = moment(date).format("h:mm A");
+
+  const pdfDate = moment().tz("Pacific/Auckland").format("YYYY-MM-DD");
+  const pdfTime = moment().tz("Pacific/Auckland").format("h:mm A");
 
   const path = `./others/pdf/${_id}.pdf`;
   let doc = new PDFDocument({
