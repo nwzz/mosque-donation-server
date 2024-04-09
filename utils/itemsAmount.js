@@ -10,7 +10,9 @@ const our_masjid_iftar_program = "Our Masjid Iftar Program";
 const food_fund = "Food Fund";
 const masjid_renovation = "Masjid Renovation";
 const qadr_fund = "Qadr Fund";
+const imam_donation = "Imam Donation";
 const dawah_donation = "Dawah Donation";
+const donate_for_gaza = "Donate for Gaza";
 const touch_tap_go = "Touch Tap Go";
 
 const itemsAmount = (arr) => {
@@ -40,6 +42,10 @@ const itemsAmount = (arr) => {
     qadrFundCount = 0,
     dawahDonation = 0,
     dawahDonationCount = 0,
+    donateForGaza = 0,
+    donateForGazaCount = 0,
+    imamDonation = 0,
+    imamDonationCount = 0,
     touchTapGo = 0,
     touchTapGoCount = 0;
 
@@ -92,6 +98,12 @@ const itemsAmount = (arr) => {
       } else if (item.name.toLowerCase() === dawah_donation.toLowerCase()) {
         dawahDonationCount++;
         dawahDonation += item.price;
+      } else if (item.name.toLowerCase() === donate_for_gaza.toLowerCase()) {
+        donateForGazaCount++;
+        donateForGaza += item.price;
+      } else if (item.name.toLowerCase() === imam_donation.toLowerCase()) {
+        imamDonationCount++;
+        imamDonation += item.price;
       } else if (item.name.toLowerCase() === touch_tap_go.toLowerCase()) {
         touchTapGoCount++;
         touchTapGo += item.price;
@@ -171,6 +183,16 @@ const itemsAmount = (arr) => {
       name: "Dawah Donation",
       amount: dawahDonation,
       transactionNo: dawahDonationCount,
+    },
+    {
+      name: "Donate for Gaza",
+      amount: donateForGaza,
+      transactionNo: donateForGazaCount,
+    },
+    {
+      name: "Imam Donation",
+      amount: imamDonation,
+      transactionNo: imamDonationCount,
     },
 
     {
