@@ -13,6 +13,7 @@ const qadr_fund = "Qadr Fund";
 const imam_donation = "Imam Donation";
 const dawah_donation = "Dawah Donation";
 const donate_for_gaza = "Donate for Gaza";
+const donate_for_sudan = "Donate for Sudan";
 const donate_for_yemen = "Donate for Yemen";
 const donate_for_palestine = "Donate for Palestine";
 const building_development_fund = "Building Development Fund";
@@ -47,6 +48,8 @@ const itemsAmount = (arr) => {
     dawahDonationCount = 0,
     donateForGaza = 0,
     donateForGazaCount = 0,
+    donateForSudan = 0,
+    donateForSudanCount = 0,
     donateForYemen = 0,
     donateForYemenCount = 0,
     donateForPalestine = 0,
@@ -110,6 +113,9 @@ const itemsAmount = (arr) => {
       } else if (item.name.toLowerCase() === donate_for_gaza.toLowerCase()) {
         donateForGazaCount++;
         donateForGaza += item.price;
+      } else if (item.name.toLowerCase() === donate_for_sudan.toLowerCase()) {
+        donateForSudanCount++;
+        donateForSudan += item.price;
       } else if (item.name.toLowerCase() === donate_for_yemen.toLowerCase()) {
         donateForYemenCount++;
         donateForYemen += item.price;
@@ -210,6 +216,11 @@ const itemsAmount = (arr) => {
       name: "Donate for Gaza",
       amount: donateForGaza,
       transactionNo: donateForGazaCount,
+    },
+    {
+      name: "Donate for Sudan",
+      amount: donateForSudan,
+      transactionNo: donateForSudanCount,
     },
     {
       name: "Donate for Yemen",
