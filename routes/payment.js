@@ -10,6 +10,7 @@ import {
   addPayment,
   receiptSent,
   againReceiptSent,
+  feedbackEmailSent,
 } from "../controllers/payment.js";
 
 const router = express.Router();
@@ -29,6 +30,7 @@ router.get("/payment/get/:paymentId", getPaymentById);
 router.get("/payment/:mosjidName", getPayment); // not use this api
 
 router.post("/add/payment", addPayment);
+router.put("/send-email", feedbackEmailSent);
 router.put("/payment/:mosjidName/receipt/sent/:paymentId", receiptSent);
 router.put(
   "/payment/:mosjidName/again/receipt/sent/:paymentId",

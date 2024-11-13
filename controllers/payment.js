@@ -5,6 +5,7 @@ import { totalAmount } from "../utils/totalAmount.js";
 import itemsAmount from "../utils/itemsAmount.js";
 import paymentPDF from "../utils/pdf/paymentPdf.js";
 import { sentReceipt } from "../sendmail/payment.js";
+import { sendEmail } from "../sendmail/advertiseFeedback.js";
 
 const allTransactionsSummary = asyncHandler(async (req, res) => {
   try {
@@ -346,6 +347,22 @@ const againReceiptSent = asyncHandler(async (req, res) => {
   }
 });
 
+const feedbackEmailSent = asyncHandler(async (req, res) => {
+  try {
+    const { user_email, user_contact_number } = req.body;
+
+    await sendEmail({ email: user_email, contactNumber: user_contact_number });
+
+    res.status(202).send({
+      message: "Receipt successfully sent!",
+    });
+  } catch (error) {
+    res.status(500).send({
+      message: error.message,
+    });
+  }
+});
+
 export {
   allTransactionsSummary,
   allItemsSummary,
@@ -357,4 +374,5 @@ export {
   addPayment,
   receiptSent,
   againReceiptSent,
+  feedbackEmailSent,
 };

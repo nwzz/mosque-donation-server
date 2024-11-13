@@ -1,0 +1,76 @@
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Forgot Password</title>
+    <style>
+      body { font-family: 'Arial', sans-serif; background-color: #f9f9f9;
+      margin: 0; padding: 0; line-height: 1.5; } .container { width: 100%;
+      max-width: 80%; margin: 40px auto; padding: 20px; background-color:
+      #ffffff; border-radius: 10px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); }
+      h2 { color: #333; font-size: 24px; margin-bottom: 10px; } p { color: #555;
+      font-size: 16px; font-weight: 400; } .bold{ color: #555; font-size: 16px;
+      margin-bottom: 15px; font-weight: 700; } .semibold{ color: #555;
+      font-size: 16px; margin-bottom: 15px; font-weight: 600; } footer {
+      margin-top: 30px; font-size: 14px; color: #777; } .mt-15{ margin-top:
+      15px; } .mb-15:{margin-bottom: 15px;} .order-btn { display: inline-block;
+      padding: 12px 25px; background-color: #DDAED3; color: #ffffff;
+      text-decoration: none; border-radius: 5px; font-weight: bold; transition:
+      background-color 0.3s ease; font-size: 16px; } .upload-proof-btn{ display:
+      inline-block; padding: 4px 20px; background-color: #DDAED3; color:
+      #ffffff; text-decoration: none; border-radius: 20px; font-weight: 600;
+      transition: background-color 0.3s ease; font-size: 14px; } a{ color:
+      white; }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <p class="mb-15">Dear <span class="bold">{{user.name}},</span></p>
+      <p class="mb-15">Thank you for your recent order. We appreciate your
+        business and are pleased to confirm the details of your purchase.
+      </p>
+
+      <div class="mb-15">
+        {{! <span class='bold mb-15'>Order Details:</span> }}
+        <p class="mb-15">
+          <span class="bold">Order ID: </span>
+          {{invoiceId}}
+        </p>
+
+      </div>
+
+      <div class="mb-15 mt-15">
+        <span class="bold">Delivery Process:</span>
+        <p style="margin: 0;">
+          <span class="semibold">Delivery Time: </span>
+          Our standard delivery time is estimated to be between 5 to 7 days
+          after the medications are collected by the courier.
+
+        </p>
+        <p style="margin: 0;">
+          <span class="semibold">Delivery Method: </span>
+          We utilize courier services for our deliveries to ensure timely and
+          secure delivery of your order. Once your shipment is released from our
+          end, our delivery team will update you with the shipment status and
+          provide the necessary tracking information. If you have any further
+          questions or require assistance with your order, please feel free to
+          contact us at any time.
+
+        </p>
+      </div>
+
+      <footer>
+        <p>
+          If you have any further questions or require assistance with your
+          order, please feel free to contact us at any time.
+        </p>
+        <p>Thank you for choosing Hope Pharma Connections</p>
+        <p>Best regards,</p>
+        <p style="margin: 0;" class="bold">Team Hope Pharma</p>
+      </footer>
+    </div>
+  </body>
+
+</html>
