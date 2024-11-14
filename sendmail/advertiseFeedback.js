@@ -23,73 +23,6 @@ async function getAccessToken() {
   return result.accessToken;
 }
 
-// Send email function
-// async function sendEmail() {
-//   const accessToken = await getAccessToken();
-//   //console.log("access token", accessToken);
-
-//   // Nodemailer transporter
-//   const transporter = nodemailer.createTransport({
-//     service: "office365",
-//     auth: {
-//       type: "OAuth2",
-//       user: FROM_EMAIL, // Replace with your Microsoft 365 email
-//       accessToken,
-//     },
-//   });
-
-//   // Email options
-//   const mailOptions = {
-//     from: FROM_EMAIL,
-//     to: TO_EMAIL,
-//     subject: "Hello from Node.js with OAuth2",
-//     text: "This is a test email sent using Microsoft 365 and Nodemailer with OAuth2.",
-//   };
-
-//   // Send mail
-//   try {
-//     const info = await transporter.sendMail(mailOptions);
-//     console.log("Email sent:", info.response);
-//   } catch (error) {
-//     console.error("Error sending email:", error.message);
-//   }
-// }
-
-// async function sendEmail() {
-//   const accessToken = await getAccessToken();
-//   console.log("Email sent:", accessToken);
-
-//   const emailData = {
-//     message: {
-//       subject: `New Contact Submission `,
-
-//       body: {
-//         contentType: "Text",
-//         content: "You have a new contact ",
-//       },
-//       from: { emailAddress: { address: FROM_EMAIL } },
-//       toRecipients: [{ emailAddress: { address: TO_EMAIL } }],
-//     },
-//   };
-
-//   try {
-//     const response = await axios.post(
-//       "https://graph.microsoft.com/v1.0/users/" + FROM_EMAIL + "/sendMail",
-//       emailData,
-//       {
-//         headers: {
-//           Authorization: `Bearer ${accessToken}`,
-//           "Content-Type": "application/json",
-//         },
-//       }
-//     );
-//     console.log("Email sent successfully:", response.data);
-//   } catch (error) {
-//     console.error("Error sending email:", error.message);
-//     throw new Error("Failed to send email");
-//   }
-// }
-
 async function sendEmail({ email, contactNumber }) {
   const accessToken = await getAccessToken();
 
@@ -100,7 +33,7 @@ async function sendEmail({ email, contactNumber }) {
         contentType: "HTML",
         content: `
           <html>
-            <body style="font-family: Arial, sans-serif; color: #333; margin-left:20px, margin-right:20px">
+            <body style="font-family: Arial, sans-serif; color: #333; margin-left:21px, margin-right:20px">
               <h1 style="color: #4CAF50;">New Query Received from Ponsonby Mosque Kiosk</h1> <br />
               <p>Hi There, <br/><br/> <strong>A new Query</strong>  has been generated from the self-service kiosk located at Ponsonby Mosque. A prospective customer has shown interest in your products/company. Please check the details of the query and respond at your earliest convenience.</p><br/>
               <h4>Inquiry Details:</h4>
