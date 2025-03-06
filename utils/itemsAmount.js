@@ -1,6 +1,7 @@
 const mosjid_donation = "Masjid Donation";
 const general_masjid_donation = "General Masjid Donation";
 const zakat_al_fitr = "Zakat Al Fitr";
+const fitrana_maal = "Fitrana";
 const biriyani_fund = "Biriyani Fund";
 const madrasha_donation = "Madrasha Donation";
 const zakat_al_maal = "Zakat Al Maal";
@@ -9,6 +10,7 @@ const massey_iftar_donation = "Massey Iftar Donation";
 const our_masjid_iftar_program = "Our Masjid Iftar Program";
 const food_fund = "Food Fund";
 const masjid_renovation = "Masjid Renovation";
+const water_n_power = "Water & Power";
 const qadr_fund = "Qadr Fund";
 const imam_donation = "Imam Donation";
 const dawah_donation = "Dawah Donation";
@@ -26,6 +28,8 @@ const itemsAmount = (arr) => {
     generalMasjidDonationCount = 0,
     zakatAlFitr = 0,
     zakatAlFitrCount = 0,
+    fitrana = 0,
+    fitranaCount = 0,
     biriyaniFund = 0,
     biriyaniFundCount = 0,
     madrashaDonation = 0,
@@ -42,6 +46,8 @@ const itemsAmount = (arr) => {
     foodFundCount = 0,
     masjidRenovation = 0,
     masjidRenovationCount = 0,
+    waterPower = 0,
+    waterPowerCount = 0,
     qadrFund = 0,
     qadrFundCount = 0,
     dawahDonation = 0,
@@ -74,6 +80,9 @@ const itemsAmount = (arr) => {
       } else if (item.name.toLowerCase() === zakat_al_fitr.toLowerCase()) {
         zakatAlFitrCount++;
         zakatAlFitr += item.price;
+      } else if (item.name.toLowerCase() === fitrana_maal.toLowerCase()) {
+        fitranaCount++;
+        fitrana += item.price;
       } else if (item.name.toLowerCase() === biriyani_fund.toLowerCase()) {
         biriyaniFundCount++;
         biriyaniFund += item.price;
@@ -104,6 +113,9 @@ const itemsAmount = (arr) => {
       } else if (item.name.toLowerCase() === masjid_renovation.toLowerCase()) {
         masjidRenovationCount++;
         masjidRenovation += item.price;
+      } else if (item.name.toLowerCase() === water_n_power.toLowerCase()) {
+        waterPowerCount++;
+        waterPower += item.price;
       } else if (item.name.toLowerCase() === qadr_fund.toLowerCase()) {
         qadrFundCount++;
         qadrFund += item.price;
@@ -156,6 +168,11 @@ const itemsAmount = (arr) => {
       transactionNo: zakatAlFitrCount,
     },
     {
+      name: "Fitrana",
+      amount: fitrana,
+      transactionNo: fitranaCount,
+    },
+    {
       name: "Biriyani Fund",
       amount: biriyaniFund,
       transactionNo: biriyaniFundCount,
@@ -200,6 +217,11 @@ const itemsAmount = (arr) => {
       name: "Masjid Renovation",
       amount: masjidRenovation,
       transactionNo: masjidRenovationCount,
+    },
+    {
+      name: "Water & Power",
+      amount: waterPower,
+      transactionNo: waterPowerCount,
     },
 
     {
